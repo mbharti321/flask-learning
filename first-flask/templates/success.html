@@ -13,9 +13,6 @@
     <h1>Welcome admin</h1>
     {% endif %}
 
-    <!-- {% for key, value in dict.items() %}
-            {{ key, value }}
-    {% endfor %} -->
 
     <table border=1 class="tempClass">
         {% for key, value in dict.items() %}
@@ -29,11 +26,16 @@
         {% endfor %}
         #}
         <!-- comment -->
-
-
         {% endfor %}
     </table>
 
+    <form action = "http://localhost:5000/result" method = "POST">
+        <p>Name <input type = "text" name = "Name" value="{{ name.capitalize() }}"/></p>
+        <p>Physics <input type = "text" name = "Physics" /></p>
+        <p>Chemistry <input type = "text" name = "chemistry" /></p>
+        <p>Maths <input type ="text" name = "Mathematics" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+     </form>
 
 
 </body>
