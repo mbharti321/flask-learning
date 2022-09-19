@@ -10,7 +10,8 @@ def loginScreen():
 @app.route('/success/<name>')
 def success(name):
     # return 'welcome %s' % name
-    return render_template('success.html', name=name)
+    dict = {'phy': 50, 'che': 60, 'maths': 70}
+    return render_template('success.html', name=name, dict=dict)
 
 
 @app.route('/login', methods=['POST', 'GET'])

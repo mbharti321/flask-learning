@@ -3,14 +3,38 @@
 
 <head>
     <title>success page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
 </head>
 
 <body style="text-align: 'center';">
     <h1>Hello world! {{ name.capitalize() }}</h1>
     {% if name == "manish" %}
-            <h1>Welcome admin</h1>
+    <h1>Welcome admin</h1>
     {% endif %}
-    
+
+    <!-- {% for key, value in dict.items() %}
+            {{ key, value }}
+    {% endfor %} -->
+
+    <table border=1 class="tempClass">
+        {% for key, value in dict.items() %}
+        <tr>
+            <th> {{ key }} </th>
+            <td> {{ value }} </td>
+        </tr>
+
+        <!-- comment -->
+        {#
+        {% endfor %}
+        #}
+        <!-- comment -->
+
+
+        {% endfor %}
+    </table>
+
+
 
 </body>
 
