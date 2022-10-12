@@ -21,6 +21,9 @@
      # app.run()
   	 app.run(debug=True)
   ```
+  - Run Flask app: `flask run`
+  ---
+
   ```python
   # build a URL dynamically or using path variable
   @app.route('/hello/<name>')
@@ -43,9 +46,29 @@
      else:
         return redirect(url_for("guest", guest = username))
   ```
+  
 - Fetching data from UI from
   - `user = request.form['nm']` : if method is post
+      ```python
+         @app.route('/login', methods=['POST', 'GET'])
+         def login():
+            if request.method == 'POST':
+               user = request.form['nm']
+               return redirect(url_for('success', name=user))
+            else:
+               user = request.args.get('nm')
+               return redirect(url_for('success', name=user))
+      ```
   - `User = request.args.get(‘nm’)`: if the method is GET
+      ```python
+      @app.route('/add')
+      def add():
+         a = int(request.form.get('a'))
+         b = int(request.form.get('b'))
+
+         return str(a+b)
+      ```
+
 - **`__name__`**:** is **a built-in variable that evaluates the name of the current module**
 - **web templating system:**  refers to designing an HTML script in which the variable data can be inserted dynamically
   - for Flask its **jinja2.**

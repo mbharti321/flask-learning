@@ -27,10 +27,11 @@ def helloPathvriable(name):
 def show_blog(id):
    return 'Blog Number %d' %id
 
-# usingurl_for for redireactions
+# using url_for for redireactions
 @app.route("/admin")
 def admin():
    return 'Admin Page'
+
 @app.route('/guest/<guest>')
 def guest(guest):
    return 'Guest Page %s' %guest
